@@ -35,10 +35,11 @@ const buildQueryString = (queryParams) => {
     .join('&');
 };
 
-export const getPokemonList = (page = 1, per_page=8) => {
+export const getPokemonList = (page = 1, per_page=8, is_rename = false) => {
   const queryParams = {
     page,
     per_page,
+    is_rename, 
   };
   return (dispatch) => {
     dispatch(isFetching({ type: "fetch", status: true }));
